@@ -27,7 +27,7 @@ public class Skola {
     }
 
     public boolean pridatUcitela(Ucitel u) {
-        this.ucitelia.add(u);
+        return this.ucitelia.add(u);
     }
 
     private void internalVypisTried() {
