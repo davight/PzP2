@@ -9,7 +9,7 @@ public class Clanok {
     private int poziciaX;
     private int poziciaY;
     private Kruh kruh;
-    private Vykonavac vykonavac;
+    private Vykonavac vykonavac = null;
 
     public Clanok(Vykonavac vykonavac) {
         this();
@@ -18,6 +18,8 @@ public class Clanok {
 
     public Clanok() {
         this.kruh = new Kruh();
+        this.poziciaX = this.kruh.getLavyHornyX();
+        this.poziciaY = this.kruh.getLavyHornyY();
     }
 
     public int getPoziciaX() {

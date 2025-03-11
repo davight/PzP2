@@ -1,5 +1,7 @@
 package w4;
 
+import w4.tvary.Platno;
+
 public class PosuvacVpred implements Vykonavac {
 
     private Husenica husenica;
@@ -11,6 +13,7 @@ public class PosuvacVpred implements Vykonavac {
     @Override
     public void vykonaj() {
         for (Clanok c : this.husenica.getAll()) {
+            Platno.dajPlatno().wait(100);
             c.posunO(0, 10);
         }
     }

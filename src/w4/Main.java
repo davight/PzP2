@@ -9,13 +9,15 @@ public class Main {
         Husenica husenica =  new Husenica();
         for (int i = 0; i < 4; i++) {
             Clanok c = new Clanok();
-            c.setVykonavac(new Prefarbovac(c.getKruh()));
             husenica.pridajClanok(c);
         }
+        husenica.getPrvy().setVykonavac(new Prefarbovac(husenica.getPrvy().getKruh()));
         Platno.dajPlatno().wait(1000);
         husenica.spracuj();
-        Odbocovac p = new Odbocovac(true, husenica);
+        Odbocovac p = new Odbocovac(false, husenica);
         p.vykonaj();
+        PosuvacVpred v = new PosuvacVpred(husenica);
+        v.vykonaj();
     }
 
 }

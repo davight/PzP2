@@ -28,7 +28,9 @@ public class Husenica {
     public void spracuj() {
         for (Clanok clanok : this.getAll()) {
             Platno.dajPlatno().wait(1000);
-            clanok.getVykonavac().vykonaj();
+            if (clanok.getVykonavac() != null) {
+                clanok.getVykonavac().vykonaj();
+            }
         }
     }
 
