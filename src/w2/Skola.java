@@ -1,23 +1,19 @@
 package w2;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Skola {
 
-    private String nazov;
-    private final ArrayList<Trieda> triedy = new ArrayList<>();
-    private final ArrayList<Ucitel> ucitelia = new ArrayList<>();
+    private final String nazov;
+    private final HashSet<Trieda> triedy = new HashSet<>();
+    private final HashSet<Ucitel> ucitelia = new HashSet<>();
 
     public Skola(String nazov) {
         this.nazov = nazov;
     }
 
     public boolean pridatTriedu(Trieda t) {
-        if (!this.triedy.contains(t)) { // preco nie pomocou setu?
-            this.triedy.add(t);
-            return true;
-        }
-        return false;
+        return this.triedy.add(t);
     }
 
     public boolean pridatStudentaDoTriedy(String nazovTriedy, Student s) {
@@ -31,11 +27,7 @@ public class Skola {
     }
 
     public boolean pridatUcitela(Ucitel u) {
-        if (!this.ucitelia.contains(u)) {
-            this.ucitelia.add(u);
-            return true;
-        }
-        return false;
+        this.ucitelia.add(u);
     }
 
     private void internalVypisTried() {
@@ -48,8 +40,9 @@ public class Skola {
     }
 
     private void internalVypisUcitelov() {
-        for (int i = 0; i < this.ucitelia.size(); i++) {
-            System.out.println((i + 1) + ". " + this.ucitelia.get(i).toString());
+        int c = 1;
+        for (Ucitel u : this.ucitelia) {
+            System.out.println(c + ". " + u.toString());
         }
     }
 

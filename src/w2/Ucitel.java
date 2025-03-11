@@ -2,14 +2,10 @@ package w2;
 
 public class Ucitel {
 
-    private String meno;
-    private String priezvisko;
-    private String titulPredMenom;
-    private String titulZaMenom;
-
-    public Ucitel() {
-
-    }
+    private final String meno;
+    private final String priezvisko;
+    private final String titulPredMenom;
+    private final String titulZaMenom;
 
     public Ucitel(String meno, String priezvisko, String titulPredMenom, String titulZaMenom) {
         this.meno = meno;

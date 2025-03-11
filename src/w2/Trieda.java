@@ -5,7 +5,6 @@ public class Trieda {
     private static final int KAPACITA = 30;
 
     private final Student[] studenti;
-
     private final String nazov;
 
     public Trieda(String nazov) {
