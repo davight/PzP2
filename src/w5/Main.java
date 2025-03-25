@@ -21,7 +21,7 @@ public class Main {
         Platno.dajPlatno().addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                lukostrelci.add(new Lukostrelec(e.getX(), e.getY()));
+                lukostrelci.add(new Lukostrelec(e.getX() - 40, e.getY() - 40));
             }
         });
 
@@ -38,6 +38,5 @@ public class Main {
             Platno.dajPlatno().wait(100);
         }
     }
-
 
 }

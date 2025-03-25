@@ -14,7 +14,7 @@ public class Odbocovac implements Vykonavac {
 
     @Override
     public void vykonaj() {
-        int pocet = vpravo ? 10 : -10;
+        int pocet = vpravo ? 20 : -20;
         for (Clanok c : this.husenica.getAll()) {
             Platno.dajPlatno().wait(100);
             c.posunO(pocet, 0);

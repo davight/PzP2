@@ -4,7 +4,7 @@ import w4.tvary.Platno;
 
 public class PosuvacVpred implements Vykonavac {
 
-    private Husenica husenica;
+    private final Husenica husenica;
 
     public PosuvacVpred(Husenica husenica) {
         this.husenica = husenica;
