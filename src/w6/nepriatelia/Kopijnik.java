@@ -15,27 +15,24 @@ public class Kopijnik extends Nepriatel {
     @Override
     public void zautoc(ArrayList<Lukostrelec> list) {
         if (this.kopija == null) {
-            System.out.println("nova kopija");
-            this.kopija = new Kopija(super.getX(), super.getY(), 200);
+            //System.out.println("nova kopija");
+            this.kopija = new Kopija(super.getX(), super.getY(), 1000);
         }
         if (!this.kopija.let()) {
             this.kopija = null;
             return;
         }
-        Lukostrelec najblizsi = super.najdiNajblizsiehoLukostrelca(list);
-        if (najblizsi == null) {
-            return;
-        }
-        double vzdialenost = this.kopija.vzdialenostKu(najblizsi);
-        if (vzdialenost <= 20) {
-            list.remove(najblizsi);
-            najblizsi.skry();
+        Lukostrelec hitnuty = this.kopija.getBlizkyLukostrelec(list, 40);
+        if (hitnuty != null) {
+            list.remove(hitnuty);
+            hitnuty.skry();
         }
     }
 
     public void skryKopiju() {
         if (this.kopija != null) {
             this.kopija.skry();
+            this.kopija = null;
         }
     }
 

@@ -11,7 +11,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Random;
 
-public abstract class Main {
+public class Main {
 
     public static void main(String[] args) {
         ArrayList<Lukostrelec> lukostrelci = new ArrayList<>();
